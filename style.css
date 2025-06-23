@@ -1,3 +1,17 @@
+/* Color Palette Variables */
+:root {
+    --color-primary-orange: #9C8256; /* Naranja Principal */
+    --color-secondary-green: #000000; /* Verde Campo */
+    --color-accent-brown: #A0522D; /* Marrón Tierra */
+    --color-highlight-yellow: #FFD700; /* Amarillo Sol/Cosecha */
+    --color-background-beige: #DBA341; /* Crema/Beige Claro */
+    --color-text-gray: #4A4A4A; /* Gris Suave para Texto */
+    --color-text-light: #F5F5F5; /* Texto claro para fondos oscuros */
+    --color-border-light: #DCDCDC; /* Gris claro para bordes sutiles */
+    --color-white: #f3f1f1;
+    --color-black: #000000;
+}
+
 /* Reset and Basic Styles */
 body, h1, h2, h3, p, ul, li, form, button, input, select {
     margin: 0;
@@ -8,14 +22,15 @@ body, h1, h2, h3, p, ul, li, form, button, input, select {
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f0f0f0; /* Light grey background for the page */
+    color: var(--color-text-gray);
+    background-color: var(--color-background-beige); /* Fondo general de la página */
 }
 
 .page-container {
     max-width: 100%;
-    background-color: #fff; /* White background for the main content wrapper */
+    background-color: var(--color-white); /* Fondo del contenedor principal de contenido */
     margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Sombra sutil */
 }
 
 .container {
@@ -26,12 +41,13 @@ body {
 }
 
 a {
-    color: #007bff;
+    color: var(--color-secondary-green); /* Enlaces en Verde Campo */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    color: var(--color-primary-orange); /* Hover en Naranja */
 }
 
 img {
@@ -41,9 +57,9 @@ img {
 
 /* Header */
 .site-header {
-    background-color: #f8f9fa; /* Light background for header */
+    background-color: var(--color-background-beige); /* Fondo beige claro */
     padding: 15px 0;
-    border-bottom: 1px solid #dee2e6; /* Light border */
+    border-bottom: 1px solid var(--color-border-light); /* Borde sutil */
 }
 
 .site-header .container {
@@ -55,13 +71,13 @@ img {
 
 .journal-title h1 {
     font-size: 1.8em;
-    color: #0056b3; /* Darker blue for title */
+    color: var(--color-accent-brown); /* Título en Marrón Tierra */
     margin-bottom: 0.2em;
 }
 
 .issn {
     font-size: 0.9em;
-    color: #555;
+    color: var(--color-text-gray);
 }
 
 .main-navigation ul {
@@ -73,42 +89,57 @@ img {
 .main-navigation ul li a {
     padding: 8px 12px;
     display: block;
-    color: #333;
+    color: var(--color-accent-brown); /* Enlaces de navegación en Marrón Tierra */
     font-size: 0.95em;
+    font-weight: bold;
 }
 
-.main-navigation ul li a:hover {
-    background-color: #e9ecef;
+.main-navigation ul li a:hover,
+.main-navigation ul li a.active { /* Suponiendo una clase .active para la página actual */
+    background-color: var(--color-primary-orange);
+    color: var(--color-white);
     border-radius: 4px;
+    text-decoration: none;
 }
 
 .header-search input[type="text"] {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border-light);
     border-radius: 4px 0 0 4px;
     font-size: 0.9em;
+}
+.header-search input[type="text"]:focus {
+    border-color: var(--color-primary-orange);
+    outline: none;
 }
 
 .header-search button {
     padding: 8px 12px;
-    border: 1px solid #007bff;
-    background-color: #007bff;
+    border: 1px solid var(--color-primary-orange);
+    background-color: var(--color-primary-orange);
     color: white;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     font-size: 0.9em;
 }
+.header-search button:hover {
+    background-color: #E69500; /* Naranja más oscuro al hover */
+    border-color: #E69500;
+}
 
 /* Breadcrumbs */
 .breadcrumbs {
-    background-color: #e9ecef; /* Slightly darker than header */
+    background-color: #f0bd65; /* Un beige ligeramente más oscuro para breadcrumbs */
     padding: 8px 0;
     font-size: 0.85em;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--color-border-light);
 }
 
 .breadcrumbs a {
-    color: #0056b3;
+    color: var(--color-secondary-green);
+}
+.breadcrumbs a:hover {
+    color: var(--color-primary-orange);
 }
 
 /* Main Content Area */
@@ -123,9 +154,9 @@ img {
 .left-sidebar, .right-sidebar {
     flex: 0 0 220px; /* Fixed width for sidebars */
     padding: 15px;
-    background-color: #f8f9fa; /* Light background for sidebars */
+    background-color: var(--color-background-beige); /* Fondo beige para sidebars */
     border-radius: 5px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--color-border-light);
 }
 
 .left-sidebar .block, .right-sidebar .block {
@@ -138,22 +169,24 @@ img {
 
 .block h3 {
     font-size: 1.1em;
-    color: #333;
-    border-bottom: 2px solid #007bff;
+    color: var(--color-accent-brown); /* Títulos de bloque en Marrón Tierra */
+    border-bottom: 2px solid var(--color-primary-orange); /* Borde inferior Naranja */
     padding-bottom: 5px;
     margin-bottom: 10px;
 }
 
 .journal-cover img {
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border-light);
     padding: 3px;
     display: block;
     margin: 0 auto 10px auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .issue-details p, .issue-doi p {
     font-size: 0.9em;
     margin-bottom: 5px;
+    color: var(--color-text-gray);
 }
 
 .keywords ul {
@@ -163,78 +196,83 @@ img {
 .keywords ul li a {
     font-size: 0.9em;
     display: inline-block;
-    background-color: #e0e0e0;
+    background-color: #E9E4D4; /* Beige más oscuro para tags */
     padding: 3px 7px;
     margin: 2px;
     border-radius: 3px;
-    color: #333;
+    color: var(--color-accent-brown);
 }
 .keywords ul li a:hover {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--color-secondary-green);
+    color: var(--color-white);
+    text-decoration: none;
 }
 
 .article-content {
     flex: 1; /* Takes remaining space */
     min-width: 0; /* Prevents overflow issues in flex items */
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
+    background-color: var(--color-white); /* Fondo blanco para el contenido del artículo */
+    border: 1px solid var(--color-border-light);
     border-radius: 5px;
 }
 
 .article-title {
     font-size: 1.7em;
-    color: #0056b3;
+    color: var(--color-secondary-green); /* Título del artículo en Verde Campo */
     margin-bottom: 10px;
 }
 
 .authors {
     font-size: 0.95em;
-    color: #555;
+    color: var(--color-text-gray);
     margin-bottom: 15px;
 }
 .authors .affiliations {
     font-size: 0.85em;
-    color: #777;
+    color: #777; /* Mantener un gris para afiliaciones si es necesario diferenciarlo más */
 }
 
 .abstract h3 {
     font-size: 1.2em;
     margin-bottom: 8px;
-    color: #333;
+    color: var(--color-accent-brown); /* Título de Resumen en Marrón */
 }
 
 .abstract p {
     font-size: 0.95em;
     margin-bottom: 20px;
     text-align: justify;
+    color: var(--color-text-gray);
 }
 
 .full-text-links a {
     display: inline-block;
     padding: 8px 15px;
-    background-color: #28a745; /* Green for PDF */
-    color: white;
+    background-color: var(--color-primary-orange); /* Botón PDF en Naranja */
+    color: var(--color-white);
     border-radius: 4px;
     margin-right: 10px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 .full-text-links a.other-format-link {
-    background-color: #6c757d; /* Gray for other formats */
+    background-color: var(--color-secondary-green); /* Otros formatos en Verde Campo */
 }
 .full-text-links a:hover {
-    opacity: 0.9;
+    opacity: 0.85;
+    text-decoration: none;
 }
 
 .article-list {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-border-light);
 }
 .article-list h3 {
     font-size: 1.2em;
     margin-bottom: 15px;
+    color: var(--color-accent-brown);
 }
 .article-list ul {
     list-style: none;
@@ -242,7 +280,7 @@ img {
 .article-list li {
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc; /* Mantener punteado o cambiar a var(--color-border-light) */
 }
 .article-list li:last-child {
     border-bottom: none;
@@ -250,8 +288,12 @@ img {
 }
 .article-list h4 a {
     font-size: 1.1em;
-    color: #0056b3;
+    color: var(--color-secondary-green);
 }
+.article-list h4 a:hover {
+    color: var(--color-primary-orange);
+}
+
 .article-list .authors-short {
     font-size: 0.85em;
     color: #666;
@@ -259,13 +301,14 @@ img {
 }
 .pdf-link-small {
     font-size: 0.8em;
-    color: #fff;
-    background-color: #007bff;
+    color: var(--color-white);
+    background-color: var(--color-primary-orange);
     padding: 3px 8px;
     border-radius: 3px;
 }
 .pdf-link-small:hover {
-    background-color: #0056b3;
+    background-color: #E69500; /* Naranja más oscuro */
+    text-decoration: none;
 }
 
 
@@ -277,29 +320,39 @@ img {
     font-size: 0.9em;
     display: block;
     padding: 5px 0;
+    color: var(--color-secondary-green);
 }
+.right-sidebar .information ul li a:hover {
+    color: var(--color-primary-orange);
+}
+
 
 .language-switcher select {
     padding: 6px;
     width: calc(100% - 80px); /* Adjust based on button width */
     margin-right: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border-light);
     border-radius: 4px;
+    background-color: var(--color-white);
 }
 .language-switcher button {
     padding: 6px 10px;
-    border: 1px solid #007bff;
-    background-color: #007bff;
-    color: white;
+    border: 1px solid var(--color-primary-orange);
+    background-color: var(--color-primary-orange);
+    color: var(--color-white);
     border-radius: 4px;
     cursor: pointer;
+}
+.language-switcher button:hover {
+    background-color: #E69500;
+    border-color: #E69500;
 }
 
 
 /* Footer */
 .site-footer {
-    background-color: #343a40; /* Dark background for footer */
-    color: #f8f9fa; /* Light text for footer */
+    background-color: var(--color-accent-brown); /* Footer en Marrón Tierra */
+    color: var(--color-text-light); /* Texto claro para el footer */
     padding: 25px 0;
     text-align: center;
     font-size: 0.9em;
@@ -311,8 +364,15 @@ img {
 }
 
 .site-footer strong {
-    color: #fff;
+    color: var(--color-white);
 }
+.site-footer a {
+    color: var(--color-highlight-yellow); /* Enlaces del footer en Amarillo/Dorado */
+}
+.site-footer a:hover {
+    color: var(--color-primary-orange);
+}
+
 
 /* Responsive Adjustments */
 
