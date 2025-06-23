@@ -373,3 +373,32 @@ img {
         margin-right: 0;
     }
 }
+
+/* Custom styles for Journal Logo */
+.journal-title {
+    display: flex;
+    align-items: center; 
+}
+
+.journal-logo {
+    max-height: 50px; 
+    width: auto;
+    margin-right: 15px; 
+}
+
+/* Ensure the text elements within journal-title are grouped if needed, this was added in HTML structure */
+.journal-title > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive adjustments for the logo if necessary */
+@media (max-width: 576px) {
+    .journal-logo {
+        max-height: 40px; /* Smaller logo on very small screens */
+        margin-right: 10px;
+    }
+    .journal-title h1 {
+        font-size: 1.3em; /* Adjust title font size if logo makes it too crowded */
+    }
+}
