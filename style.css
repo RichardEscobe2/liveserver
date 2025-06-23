@@ -3,7 +3,7 @@
     --color-primary-orange: #9C8256; /* Naranja Principal */
     --color-secondary-green: #000000; /* Verde Campo */
     --color-accent-brown: #A0522D; /* Marrón Tierra */
-    --color-highlight-yellow: #FFD700; /* Amarillo Sol/Cosecha */
+    --color-highlight-yellow: #b3986b; /* Amarillo Sol/Cosecha */
     --color-background-beige: #DBA341; /* Crema/Beige Claro */
     --color-text-gray: #4A4A4A; /* Gris Suave para Texto */
     --color-text-light: #F5F5F5; /* Texto claro para fondos oscuros */
@@ -96,10 +96,9 @@ img {
 
 .main-navigation ul li a:hover,
 .main-navigation ul li a.active { /* Suponiendo una clase .active para la página actual */
-    background-color: var(--color-primary-orange);
-    color: var(--color-white);
-    border-radius: 4px;
-    text-decoration: none;
+    color: var(--color-primary-orange); /* Cambiado para que solo cambie el color del texto y añada subrayado */
+    text-decoration: underline; /* Añade subrayado en hover/active */
+    background-color: transparent; /* Elimina el fondo */
 }
 
 .header-search input[type="text"] {
@@ -117,14 +116,15 @@ img {
     padding: 8px 12px;
     border: 1px solid var(--color-primary-orange);
     background-color: var(--color-primary-orange);
-    color: white;
+    color: var(--color-white); /* Estandarizado al color de texto claro */
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     font-size: 0.9em;
 }
 .header-search button:hover {
-    background-color: #E69500; /* Naranja más oscuro al hover */
-    border-color: #E69500;
+    background-color: var(--color-highlight-yellow); /* Hover más claro */
+    border-color: var(--color-highlight-yellow); /* Hover más claro */
+    color: var(--color-text-gray); /* Color de texto para hover */
 }
 
 /* Breadcrumbs */
@@ -255,13 +255,18 @@ img {
     margin-right: 10px;
     font-weight: bold;
     text-transform: uppercase;
+    border: 1px solid var(--color-primary-orange); /* Añadido para consistencia */
 }
 .full-text-links a.other-format-link {
     background-color: var(--color-secondary-green); /* Otros formatos en Verde Campo */
+    border-color: var(--color-secondary-green); /* Añadido para consistencia */
 }
 .full-text-links a:hover {
-    opacity: 0.85;
+    background-color: var(--color-highlight-yellow); /* Hover más claro */
+    border-color: var(--color-highlight-yellow); /* Hover más claro */
+    color: var(--color-text-gray); /* Color de texto para hover */
     text-decoration: none;
+    /* opacity: 1; Removido opacity, manejado por cambio de color */
 }
 
 .article-list {
@@ -305,9 +310,12 @@ img {
     background-color: var(--color-primary-orange);
     padding: 3px 8px;
     border-radius: 3px;
+    border: 1px solid var(--color-primary-orange); /* Añadido para consistencia */
 }
 .pdf-link-small:hover {
-    background-color: #E69500; /* Naranja más oscuro */
+    background-color: var(--color-highlight-yellow); /* Hover más claro */
+    border-color: var(--color-highlight-yellow); /* Hover más claro */
+    color: var(--color-text-gray); /* Color de texto para hover */
     text-decoration: none;
 }
 
